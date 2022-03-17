@@ -17,7 +17,7 @@ var cronometro = setInterval(function(){
     if(tempo < 0){
         clearInterval(cronometro);
         clearInterval(criaMosquito);
-        
+        window.location.href = 'win.html'
     }
 
     document.getElementById('cronometro').innerHTML = tempo;
@@ -31,7 +31,7 @@ function posicaoRandomica(){
        document.getElementById('mosquito').remove(); 
 
        if(vidas > 3){
-            window.location.href = 'game_over.html'
+            
        }
        else{
            document.getElementById('v' + vidas).src = "img/coracao_vazio.png";
