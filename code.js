@@ -32,7 +32,7 @@ var cronometro = setInterval(function(){
     if(tempo < 0){
         clearInterval(cronometro);
         clearInterval(criaMosquito);
-        window.location.href = 'game_over.html'
+        window.location.href = 'win.html'
     }
 
     document.getElementById('cronometro').innerHTML = tempo;
