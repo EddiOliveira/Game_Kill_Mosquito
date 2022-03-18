@@ -4,28 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kill Mosquito</title>
+    <title>GAME OVER</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     <link rel="stylesheet" href="style.css">
-    <script src="code.js"></script>
+
+    <script>
+
+        function iniciarJogo(){
+            var nivel = document.getElementById('nivel').value;
+
+            if(nivel === ''){
+                alert('Selecione um nível');
+                return false;
+            }
+
+            window.location.href = "app.html?" + nivel;
+        }
+
+    </script>
 </head>
 
-<body onresize="ajustaTamanhoPalcoJogo()">
+<body>
 
-    <div class="painel">
-        <div class="vidas">
-            <img id="v1" src="img/coracao_cheio.png">
-            <img id="v2" src="img/coracao_cheio.png">
-            <img id="v3" src="img/coracao_cheio.png">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <img src="img/game.png">
+                </div>
+            </div>
         </div>
-
-        <div class="cronometro">Tempo restante: <span id="cronometro"></span></div>
     </div>
 
+    <div class="row">
+        <div class="col">
+            <div class="d-flex justify-content-center">
+                <div class="mb-2">
+                    <select class="form-control" id="nivel">
+                        <option value="">-- Seleicionar o nível --</option>
+                        <option value="easy">easy</option>
+                        <option value="medium">medium</option>
+                        <option value="hard">hard</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
-<script>
-    var criaMosquito = setInterval(posicaoRandomica, 2000);
-</script>
+    <div class="row">
+        <div class="col">
+            <div class="d-flex justify-content-center">
+                <button onclick="iniciarJogo()" type="button" class="btn btn-danger btn-lg">Iniciar jogo</button>
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>
